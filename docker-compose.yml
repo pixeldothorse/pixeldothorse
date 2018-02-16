@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: hunter2
+    command: postgres -c max_connections=1000
+
+  redis:
+    image: redis:alpine
+    restart: always
+
+  nats:
+    image: nats:1.0.4
+    restart: always
+
+  lokahid:
+    image: horseville/horseville
+    restart: always
+    depends_on:
+      - "db"
+      - "nats"
+    environment:
+      NATS_URL: nats://nats:4222
+      DATABASE_URL: postgres://postgres:hunter2@db:5432/postgres?sslmode=disable
+      PORT: 8084
+    ports:
+      - 8084:8084
