@@ -3,19 +3,22 @@
 current_dir = $(shell pwd)
 go_version = 1.10
 
+# To be run outside containers
+docker:
+	docker pull xena/go:$(go_version)
+	docker build -t horseville/core -f Dockerfile.core .
+	docker build -t horseville/horsevilled .
+
+run: docker
+	docker-compose up -d
+
+# To be run inside containers
 tools:
 	retool build
 
 dep:
 	retool do dep ensure -update
 	retool do dep prune
-
-docker:
-	docker pull xena/go:$(go_version)
-	docker build -t horseville/horsevilled .
-
-run: docker
-	docker-compose up -d
 
 generate: tools
 	retool do statik -src ./public -f
