@@ -15,7 +15,7 @@
 
 # ignored directories
 bin/
-statik/
+/statik/
 
 # Generated file with database migrations
 internal/database/dmigrations/bindata.go
