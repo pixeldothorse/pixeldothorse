@@ -9,10 +9,6 @@
       "Commit": "37d9ea0ac16f0e0a05afc3b60e1ac8c364b6c329"
     },
     {
-      "Repository": "github.com/magefile/mage",
-      "Commit": "868d481f12598f48fde9439ef6047c751c19dc40"
-    },
-    {
       "Repository": "github.com/twitchtv/twirp/protoc-gen-twirp",
       "Commit": "125be91eedbde9ffaec9838e5ab7d94ef2760444"
     },
