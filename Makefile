@@ -23,6 +23,7 @@ dep:
 generate: tools
 	retool do statik -src ./public -f
 	sh -c 'cd ./internal/database/migrations && retool do go-bindata -pkg=dmigrations -o=../dmigrations/bindata.go .'
+	sh -c 'cd ./rpc/horseville && retool do sh ./regen.sh'
 
 test: generate
 	go test ./...

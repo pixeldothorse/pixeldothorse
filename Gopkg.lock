@@ -23,6 +23,16 @@
   version = "v1.5.0"
 
 [[projects]]
+  name = "github.com/golang/protobuf"
+  packages = [
+    "jsonpb",
+    "proto",
+    "ptypes/struct"
+  ]
+  revision = "925541529c1fa6821df4e44ce2723319eb2be768"
+  version = "v1.0.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/heroku/x"
   packages = ["scrub"]
@@ -59,6 +69,22 @@
   version = "v3.0.1"
 
 [[projects]]
+  name = "github.com/nats-io/go-nats"
+  packages = [
+    ".",
+    "encoders/builtin",
+    "util"
+  ]
+  revision = "d66cb54e6b7bdd93f0b28afc8450d84c780dfb68"
+  version = "v1.4.0"
+
+[[projects]]
+  name = "github.com/nats-io/nuid"
+  packages = ["."]
+  revision = "289cccf02c178dc782430d534e3c1f5b72af807f"
+  version = "v1.0.0"
+
+[[projects]]
   name = "github.com/pkg/errors"
   packages = ["."]
   revision = "645ef00459ed84a119197bfb8d8205042c6df63d"
@@ -74,6 +100,7 @@
   name = "github.com/twitchtv/twirp"
   packages = [
     ".",
+    "ctxsetters",
     "internal/contextkeys"
   ]
   revision = "125be91eedbde9ffaec9838e5ab7d94ef2760444"
@@ -92,6 +119,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "6aa1d44bf0718caaaa73d806cbb6ed6480da11b992c9b7325afa69b7cd6628f5"
+  inputs-digest = "9efda559116f29cbe987d97371a4073d2a0475e2d395592a804e98935e6dd562"
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+// horseville is the public, user-facing API for the Horseville game.
+package io.horseville;
+option go_package = "horseville";
+
+// Ping is useful for measuring response time
+service Ping {
+	rpc Message(Nil) returns(Nil);
+}
+
+message Nil {}

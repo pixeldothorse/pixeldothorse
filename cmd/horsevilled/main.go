@@ -10,8 +10,11 @@ import (
 	"github.com/caarlos0/env"
 	"github.com/heroku/x/scrub"
 	"github.com/horseville/horseville/internal/database"
+	"github.com/horseville/horseville/internal/horsevilleserver"
 	"github.com/horseville/horseville/internal/redigo"
+	"github.com/horseville/horseville/rpc/horseville"
 	"github.com/jmoiron/sqlx"
+	nats "github.com/nats-io/go-nats"
 )
 
 type config struct {
@@ -89,6 +92,11 @@ func main() {
 	}
 
 	db.SetMaxOpenConns(30)
+
+	mux := http.NewServeMux()
+
+	p := horsevilleserver.Ping{}
+	mux.Handle(horseville.PingPathPrefix, horseville.NewPingServer(p, makeLnHooks()))
 
 	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		_, err := db.Exec("SELECT 1+1")

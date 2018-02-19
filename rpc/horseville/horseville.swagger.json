@@ -1,0 +1,51 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "horseville.proto",
+    "description": "horseville is the public, user-facing API for the Horseville game.",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/twirp/io.horseville.Ping/Message": {
+      "post": {
+        "operationId": "Message",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Nil"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Nil"
+            }
+          }
+        ],
+        "tags": [
+          "Ping"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Nil": {
+      "type": "object"
+    }
+  }
+}
