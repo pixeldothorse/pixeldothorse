@@ -65,3 +65,35 @@ Now rerun the generators:
 ```console
 (ctr)# make generate
 ```
+
+## Host Dependencies
+
+The following steps are distro-dependent:
+
+### Alpine
+
+```console
+# apk --no-cache add git protobuf make
+```
+
+### Centos
+
+```console
+$ sudo yum install autoconf automake libtool unzip gcc-c++ git -y
+$ git clone https://github.com/google/protobuf.git
+$ cd protobuf
+$ ./autogen.sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
+### Fedora
+
+```console
+# dnf -y install protobuf-devel
+```
+
+### Ubuntu
+
+Install protobuf tools via these commands: https://gist.github.com/sofyanhadia/37787e5ed098c97919b8c593f0ec44d8
