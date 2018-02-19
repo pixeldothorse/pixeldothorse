@@ -2,8 +2,10 @@ package main
 
 import (
 	"context"
+	"net"
 	"net/http"
 	"net/url"
+	"os"
 	"time"
 
 	"github.com/Xe/ln"
@@ -106,5 +108,23 @@ func main() {
 			return
 		}
 
+	})
+	var h http.Handler
+	h = metaInfo(mux)
+
+	ln.Log(ctx, ln.F{"port": os.Getenv("PORT")}, ln.Action("Listening on http"))
+	ln.FatalErr(ctx, http.ListenAndServe(":"+cfg.Port, h), ln.Action("http server stopped for some reason"))
+}
+
+func metaInfo(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		host, _, _ := net.SplitHostPort(r.RemoteAddr)
+		f := ln.F{
+			"remote_ip":       host,
+			"x_forwarded_for": r.Header.Get("X-Forwarded-For"),
+		}
+		ctx := ln.WithF(r.Context(), f)
+
+		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }
