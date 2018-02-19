@@ -2,10 +2,40 @@
 
 
 [[projects]]
-  branch = "master"
-  name = "github.com/jtolds/qod"
+  name = "github.com/Xe/ln"
   packages = ["."]
-  revision = "3abb44dfc7ba8b5cdfdb634786f57e78c7004e1c"
+  revision = "466e05b2ef3e48ce08a367b6aaac09ee29a124e5"
+  version = "v0.1"
+
+[[projects]]
+  name = "github.com/caarlos0/env"
+  packages = ["."]
+  revision = "7cd7992b3bc86f920394f8de92c13900da1a46b7"
+  version = "v3.2.0"
+
+[[projects]]
+  name = "github.com/garyburd/redigo"
+  packages = [
+    "internal",
+    "redis"
+  ]
+  revision = "d1ed5c67e5794de818ea85e6b522fda02623a484"
+  version = "v1.5.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/heroku/x"
+  packages = ["scrub"]
+  revision = "705849e307dd75c91728463dea5bfd08ef493e64"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/jmoiron/sqlx"
+  packages = [
+    ".",
+    "reflectx"
+  ]
+  revision = "05cef0741ade10ca668982355b3f3f0bcf0ff0a8"
 
 [[projects]]
   branch = "master"
@@ -40,9 +70,28 @@
   revision = "fd36b3595eb2ec8da4b8153b107f7ea08504899d"
   version = "v0.1.1"
 
+[[projects]]
+  name = "github.com/twitchtv/twirp"
+  packages = [
+    ".",
+    "internal/contextkeys"
+  ]
+  revision = "125be91eedbde9ffaec9838e5ab7d94ef2760444"
+  version = "v5.2.0"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/net"
+  packages = [
+    "context",
+    "internal/timeseries",
+    "trace"
+  ]
+  revision = "cbe0f9307d0156177f9dd5dc85da1a31abc5f2fb"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "6bc400da194368fa4b31d5d605c22b6d1565fb613f3c5269c01aeab2b43ef402"
+  inputs-digest = "6aa1d44bf0718caaaa73d806cbb6ed6480da11b992c9b7325afa69b7cd6628f5"
   solver-name = "gps-cdcl"
   solver-version = 1
