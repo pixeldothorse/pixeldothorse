@@ -16,8 +16,8 @@ services:
     image: nats:1.0.4
     restart: always
 
-  horsevilled:
-    image: horseville/horsevilled
+  pixeldothorse:
+    image: pixeldothorse/pixeldothorsed
     restart: always
     depends_on:
       - "db"

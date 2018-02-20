@@ -6,8 +6,8 @@ go_version = 1.10
 # To be run outside containers
 docker:
 	docker pull xena/go:$(go_version)
-	docker build -t horseville/core -f Dockerfile.core .
-	docker build -t horseville/horsevilled .
+	docker build -t pixeldothorse/core -f Dockerfile.core .
+	docker build -t pixeldothorse/pixeldothorsed .
 
 run: docker
 	docker-compose up -d
@@ -23,7 +23,7 @@ dep:
 generate: tools
 	retool do statik -src ./public -f
 	sh -c 'cd ./internal/database/migrations && retool do go-bindata -pkg=dmigrations -o=../dmigrations/bindata.go .'
-	sh -c 'cd ./rpc/horseville && retool do sh ./regen.sh'
+	sh -c 'cd ./rpc/pixeldothorse && retool do sh ./regen.sh'
 
 test: generate
 	go test ./...

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+// pixeldothorse is the public, user-facing API for the Pixel.Horse game.
+package io.pixeldothorse;
+option go_package = "pixeldothorse";
+
+// Ping is useful for measuring response time
+service Ping {
+	rpc Message(Nil) returns(Nil);
+}
+
+message Nil {}

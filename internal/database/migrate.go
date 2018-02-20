@@ -3,10 +3,10 @@ package database
 import (
 	"database/sql"
 
-	"github.com/horseville/horseville/internal/database/dmigrations"
 	"github.com/mattes/migrate"
 	_ "github.com/mattes/migrate/database/postgres"
 	bindata "github.com/mattes/migrate/source/go-bindata"
+	"github.com/pixeldothorse/pixeldothorse/internal/database/dmigrations"
 )
 
 func Migrate(durl string) error {

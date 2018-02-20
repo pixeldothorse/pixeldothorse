@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "horseville.proto",
-    "description": "horseville is the public, user-facing API for the Horseville game.",
+    "title": "pixeldothorse.proto",
+    "description": "pixeldothorse is the public, user-facing API for the Pixel.Horse game.",
     "version": "version not set"
   },
   "schemes": [
@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/twirp/io.horseville.Ping/Message": {
+    "/twirp/io.pixeldothorse.Ping/Message": {
       "post": {
         "operationId": "Message",
         "responses": {
