@@ -108,6 +108,14 @@ func main() {
 			return
 		}
 
+		err = nc.Flush()
+		if err != nil {
+			ln.Error(r.Context(), err)
+			http.Error(w, "nats error", http.StatusInternalServerError)
+			return
+		}
+
+		w.WriteHeader(http.StatusOK)
 	})
 	var h http.Handler
 	h = metaInfo(mux)
