@@ -1,7 +1,10 @@
-.PHONY: build docker run test generate travis dep tools
+.PHONY: build docker run test generate travis dep tools nothing
 
 current_dir = $(shell pwd)
 go_version = 1.10
+
+nothing:
+	true
 
 # To be run outside containers
 docker:
