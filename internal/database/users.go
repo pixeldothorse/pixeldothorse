@@ -99,7 +99,7 @@ func (p PostgresOperations) ReadUserByUUID(ctx context.Context, uid uuid.UUID) (
 func (p PostgresOperations) UpdateUser(ctx context.Context, u User) (User, error) {
 	qry := `UPDATE users
                 SET username = $1
-                    is_admin = $2
+                  , is_admin = $2
                 WHERE id = $3
                 RETURNING updated_at;`
 	row := p.db.QueryRowContext(ctx, qry, u.Username, u.IsAdmin, u.ID)
