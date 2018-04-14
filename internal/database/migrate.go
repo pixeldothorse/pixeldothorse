@@ -9,6 +9,8 @@ import (
 	"github.com/pixeldothorse/pixeldothorse/internal/database/dmigrations"
 )
 
+// Migrate attempts to migrate the given database by URL to the most recent
+// version of the schema.
 func Migrate(durl string) error {
 	s := bindata.Resource(dmigrations.AssetNames(),
 		func(name string) ([]byte, error) {
@@ -33,6 +35,8 @@ func Migrate(durl string) error {
 	return nil
 }
 
+// Destroy unmigrates the given database by URL from the given schema. This will
+// DESTROY DATA. ENSURE DATA YOU WANT TO KEEP IS BACKED UP.
 func Destroy(durl string) error {
 	s := bindata.Resource(dmigrations.AssetNames(),
 		func(name string) ([]byte, error) {

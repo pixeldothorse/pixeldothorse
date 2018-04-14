@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/twirp/io.pixeldothorse.Ping/Message": {
+    "/twirp/horse.pixel.Ping/Message": {
       "post": {
         "operationId": "Message",
         "responses": {
